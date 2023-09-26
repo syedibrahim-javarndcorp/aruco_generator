@@ -6,7 +6,7 @@ def generate_single_marker(aruco_dict):
     marker_size = int(input("Enter the marker size: "))
 
     if marker_size < 7:
-        print('Marker Size is Small')
+        print('Marker Size is too Small to Generate Aruco Generator')
         continue
     else:
         print(f'You entered {marker_size}')
@@ -33,7 +33,7 @@ def generate_bulk_markers(aruco_dict):
     marker_size = int(input("Enter the marker size: "))
 
     if marker_size < 7:
-        print('Marker Size is Small')
+        print('Marker Size is too Small to Generate Aruco Generator')
         continue
     else:
         print(f'You entered {marker_size}')
@@ -56,8 +56,7 @@ def generate_bulk_markers(aruco_dict):
 def main():
    aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_50)
 
-   user_input = input("Press '1' -->> Single Marker or "
-                       "'2' -->> Markers in Bulk: ")
+   user_input = input("Select \n 1 -->> Single Marker\n 2 -->> Markers in Bulk\t: ")
 
    if user_input == "1":
        generate_single_marker(aruco_dict)
