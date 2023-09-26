@@ -1,9 +1,17 @@
 import cv2
 
 def generate_single_marker(aruco_dict):
-   marker_size = int(input("Enter the marker size: "))
-   if marker_size < 7 :
-       print('Marker Size should be greater than or equal to 8')
+   marker_size = 0
+   while True:
+    marker_size = int(input("Enter the marker size: "))
+
+    if marker_size < 7:
+        print('Marker Size is Small')
+        continue
+    else:
+        print(f'You entered {marker_size}')
+        break
+    
    marker_id = int(input("Enter the marker ID: "))
 
    marker_img = cv2.aruco.generateImageMarker(aruco_dict, marker_id,
@@ -20,7 +28,16 @@ def generate_single_marker(aruco_dict):
    cv2.waitKey(0)
 
 def generate_bulk_markers(aruco_dict):
-   marker_size = int(input("Enter the marker size: "))
+   marker_size = 0
+   while True:
+    marker_size = int(input("Enter the marker size: "))
+
+    if marker_size < 7:
+        print('Marker Size is Small')
+        continue
+    else:
+        print(f'You entered {marker_size}')
+        break
    num_markers = int(input("Enter the number of markers to generate: "))
    marker_imgs = []
 
@@ -48,7 +65,6 @@ def main():
        generate_bulk_markers(aruco_dict)
    else:
        print("Invalid input. Please try again.")
-
 
 if __name__ == "__main__":
    main()
