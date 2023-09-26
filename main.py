@@ -38,7 +38,7 @@ def generate_bulk_markers(aruco_dict):
     else:
         print(f'You entered {marker_size}')
         break
-   num_markers = int(input("Enter the number of markers to generate: "))
+   num_markers = int(input("Enter the total number of markers to generate: "))
    marker_imgs = []
 
    for marker_id in range(num_markers):
