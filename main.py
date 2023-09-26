@@ -37,8 +37,8 @@ def generate_bulk_markers(aruco_dict):
 def main():
    aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_50)
 
-   user_input = input("Press '1' to generate a single marker or "
-                       "'2' to generate markers in bulk: ")
+   user_input = input("Press '1' for Single Marker or "
+                       "'2' for Markers in Bulk: ")
 
    if user_input == "1":
        generate_single_marker(aruco_dict)
